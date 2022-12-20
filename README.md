@@ -19,7 +19,7 @@ Being a huge fan of the retro-computing scene, and having built a few different 
 - Front Panel Headers
 - BP-80E Expansion Slots x3
 - iLoad Intel-HEX loader firmware embedded.
-- Optionally boots CP/M 2.2, CP/M 3, QP/M 2.71, Forth, Basic, and Fuzix.
+- Optionally boots CP/M 2.2, CP/M 3, QP/M 2.71, Forth, BASIC, and Fuzix.
 
 ## Feature Break-Down
 The features on this board are implemented using what I call the "Northbridge" and the "SouthBridge". Both chips are responsible for different areas of the board. The Southbridge operates identically to my CyrUX board, but with ATX power management and boot sequence control added to it. The following is a breakdown of what each is and does:
