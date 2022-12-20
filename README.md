@@ -1,6 +1,8 @@
 # CyBorg
 ATX-compliant Z80-based SBC motherboard
 
+![CyBorg](schematics/PCB_CyBorg_render.jpg)
+
 ## Synopsis
 Being a huge fan of the retro-computing scene, and having built a few different "modern retro" computers from kits that were Z80 and Z180-based, I decided to study their schematics and try to design one myself. The design I settled on is a kind of amalgamation of the [Z80-MBC2](https://github.com/SuperFabius/Z80-MBC2) and my [CyrUX Board](https://github.com/cyrusbuilt/CyrUX) and a variation of the [RC2014 Enhanced Bus](https://smallcomputercentral.com/documentation/specification-rc2014-bus/#enhanced). CyBorg represents my first attempt at a CP/M and [Fuzix](https://github.com/EtchedPixels/FUZIX)-compatible retro computer that you can mount in a standard PC chassis.
 
@@ -95,3 +97,6 @@ When the users presses power, it then drives the ATX PC_ON line LOW to turn on t
 Back to the Northbridge, after checking for boot mode selection and storing the flag, it enters boot stage 2 which initializes all the appropriate address and data lines on the system bus, then the logical RAM banks, system clock, and console lines, then moves to boot stage 3. Stage 3 reads the CPU speed mode, boot selection, and CP/M auto-exec flags from EEPROM, initializes the I2C interface and scans for the I/O expander and RTC, then outputs boot info to serial, then moves to boot stage 4. Stage 4 tries to mount the SD card (if present) and presents the user with boot mode selection menu if the USER line was LOW at boot and then proceeds to load the selected (via menu or from EEPROM or fallback to default) boot image into RAM (either from flash or from SD card), then moves to boot stage 5. Stage 5 holds the CPU in RESET, then initializes the system clock, then flushes the serial buffer, then releases the RESET line so the CPU begins executing.
 
 Additional detail can be found in the firware projects for the Northbridge and Southbridge (coming soon).
+
+## Project Structure
+All design files are in the "schematics" folder. It contains the JSON exports for the [EasyEDA](https://easyeda.com/) schematic and PCB CAB files, the BOM in CSV format, PDFs of the schematic and PCB designs, and then in schematics/gerber are the production gerber files.
