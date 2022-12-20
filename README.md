@@ -99,4 +99,4 @@ Back to the Northbridge, after checking for boot mode selection and storing the 
 Additional detail can be found in the firware projects for the Northbridge and Southbridge (coming soon).
 
 ## Project Structure
-All design files are in the "schematics" folder. It contains the JSON exports for the [EasyEDA](https://easyeda.com/) schematic and PCB CAB files, the BOM in CSV format, PDFs of the schematic and PCB designs, and then in schematics/gerber are the production gerber files.
+All design files are in the "schematics" folder. It contains the JSON exports for the [EasyEDA](https://easyeda.com/) schematic and PCB CAD files, the BOM in CSV format, PDFs of the schematic and PCB designs, and then in schematics/gerber are the production gerber files.
