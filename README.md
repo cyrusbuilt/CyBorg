@@ -96,7 +96,11 @@ When the users presses power, it then drives the ATX PC_ON line LOW to turn on t
 
 Back to the Northbridge, after checking for boot mode selection and storing the flag, it enters boot stage 2 which initializes all the appropriate address and data lines on the system bus, then the logical RAM banks, system clock, and console lines, then moves to boot stage 3. Stage 3 reads the CPU speed mode, boot selection, and CP/M auto-exec flags from EEPROM, initializes the I2C interface and scans for the I/O expander and RTC, then outputs boot info to serial, then moves to boot stage 4. Stage 4 tries to mount the SD card (if present) and presents the user with boot mode selection menu if the USER line was LOW at boot and then proceeds to load the selected (via menu or from EEPROM or fallback to default) boot image into RAM (either from flash or from SD card), then moves to boot stage 5. Stage 5 holds the CPU in RESET, then initializes the system clock, then flushes the serial buffer, then releases the RESET line so the CPU begins executing.
 
-Additional detail can be found in the firware projects for the Northbridge and Southbridge (coming soon).
+Additional detail can be found in the firware projects for the [Northbridge](https://github.com/cyrusbuilt/CyBorg-Northbridge) and [Southbridge](https://github.com/cyrusbuilt/CyBorg-Southbridge).
 
 ## Project Structure
 All design files are in the "schematics" folder. It contains the JSON exports for the [EasyEDA](https://easyeda.com/) schematic and PCB CAD files, the BOM in CSV format, PDFs of the schematic and PCB designs, and then in schematics/gerber are the production gerber files.
+
+## Possible Revision Changes
+1) Add fan headers
+2) Switch to ATX24 power connector (far more common)
