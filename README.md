@@ -88,7 +88,7 @@ The expansion bus slots are an unofficial variation of the RC2014 Enhanced bus I
 10) JP8: Front-panel power LED header. Same as PWR OK LED.
 11) JP9: Front-panel SD card activity LED. Same as SD ACT LED.
 12) JP10: Front-panel boot mode LED. Same as USER LED.
-13) JP11: Enable Serial TX line from Southbridge to Northbridge. Should be enabled for normal operation. Disable (remove jumper) when flashing firmware.
+13) JP11: Enable Serial RX line from Southbridge to Northbridge. Should be enabled for normal operation. Disable (remove jumper) when flashing firmware. This may not be strictly necessary, but I was running into odd behavior with the ESP32 while flashing and disconnecting the RX line from the rest of the system seemed to alleviate the issue. So a simple jumper seemed to be the simplest fix until I have a more concrete solution.
 
 ## Boot Sequence
 Being an ATX-compliant board, this system uses an ATX-20 power connector intended to be used with an ATX Power Supply. The ATX power management and boot sequence works as follows: The Southbridge receives it's power from the 5VSB line, which is always on as long as the ATX power supply has power (but not necessarily "running"). On power-on the Southbridge enters boot stage 0, which *only* initializes the debug port and the ATX power management system, then waits for the user to press the power button.
