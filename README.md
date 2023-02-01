@@ -1,7 +1,7 @@
 # CyBorg
 ATX-compliant Z80-based SBC motherboard
 
-![CyBorg](schematics/PCB_CyBorg_render.jpg)
+![CyBorg](top.svg)
 
 ## Synopsis
 Being a huge fan of the retro-computing scene, and having built a few different "modern retro" computers from kits that were Z80 and Z180-based, I decided to study their schematics and try to design one myself. The design I settled on is a kind of amalgamation of the [Z80-MBC2](https://github.com/SuperFabius/Z80-MBC2) and my [CyrUX Board](https://github.com/cyrusbuilt/CyrUX) and a variation of the [RC2014 Enhanced Bus](https://smallcomputercentral.com/documentation/specification-rc2014-bus/#enhanced). CyBorg represents my first attempt at a CP/M and [Fuzix](https://github.com/EtchedPixels/FUZIX)-compatible retro computer that you can mount in a standard PC chassis.
@@ -53,7 +53,7 @@ The features on this board are implemented using what I call the "Northbridge" a
 	* 4MB Flash
 	* PCB antenna
 3) Responsibilities:
-	* ATX Powermanagement.
+	* ATX Power management.
 	* Boot sequence control.
 	* [FabGL-based](https://github.com/fdivitto/FabGL) Terminal System which provides:
 	* PS/2 Keyboard and Mouse input.
@@ -64,7 +64,7 @@ The features on this board are implemented using what I call the "Northbridge" a
 ## Core
 1) Zilog Z80 CMOS CPU @ 8MHz
 	* Main System Processor.
-2) TC551001 128KB SRAM (banked 64K x 2)
+2) AS6C1008-55PCN 128KB SRAM (banked 64K x 2)
 	* Main System RAM.
 
 ## Expansion Bus Slots
