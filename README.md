@@ -81,14 +81,14 @@ The expansion bus slots are an unofficial variation of the RC2014 Enhanced bus I
 3) Header H2: This is essentially an SPI bus header used to attach the SD Card Reader.
 4) Header H1: RS-232 serial header that goes directly to the Southbridge and used to program/debug the Southbridge. Intended to be used with a USB-to-Serial FTDI cable.
 5) Jumper JP1: (should be jumpered for normal operation) enables power to the Southbridge via the 5VSB line from the ATX power supply. Unjumper this to enable power from the FTDI cable.
-6) Jumpers JP2 and JP3: (should be jumpered for normal operation) enables the Serial connection to the Southbridge. Unjumper these to use just H1 or DB-9 serial port.
+6) Jumpers JP2 and JP3: (should be jumpered for normal operation) enables the Serial connection to the Southbridge.
 7) JP5: Front-panel reset switch. Momentarily short to reset the system. Same as pressing RESET button.
 8) JP6: Front-panel power button. Momentarily short to power system on. Short for >= 10s to power off. Same as pressing ON/OFF button.
 9) JP7: Front-panel USER button. Press and hold during power on to get boot mode selection menu. Same as pressing USER button.
 10) JP8: Front-panel power LED header. Same as PWR OK LED.
 11) JP9: Front-panel SD card activity LED. Same as SD ACT LED.
 12) JP10: Front-panel boot mode LED. Same as USER LED.
-13) JP11: Enable Serial RX line from Southbridge to Northbridge. Should be enabled for normal operation. Disable (remove jumper) when flashing firmware. This may not be strictly necessary, but I was running into odd behavior with the ESP32 while flashing and disconnecting the RX line from the rest of the system seemed to alleviate the issue. So a simple jumper seemed to be the simplest fix until I have a more concrete solution.
+13) JP11: Enable Serial RX line from Southbridge to Northbridge. Should be enabled for normal operation. Disable (remove jumper) when flashing firmware. This may not be strictly necessary, but I was running into odd behavior with the ESP32 while flashing and disconnecting the RX line from the rest of the system seemed to alleviate the issue. So a simple jumper seemed to be the simplest fix until I have a more concrete solution. Both this jumper and JP3 should be enabled to communicate with the Southbridge. However,the only difference between them is JP3 is placed *before* the level-shifter circuit and JP11 is *after* the level shifter. These jumpers may be removed in a future revision.
 
 ## Boot Sequence
 Being an ATX-compliant board, this system uses an ATX-20 power connector intended to be used with an ATX Power Supply. The ATX power management and boot sequence works as follows: The Southbridge receives it's power from the 5VSB line, which is always on as long as the ATX power supply has power (but not necessarily "running"). On power-on the Southbridge enters boot stage 0, which *only* initializes the debug port and the ATX power management system, then waits for the user to press the power button.
