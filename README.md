@@ -3,6 +3,9 @@ ATX-compliant Z80-based SBC motherboard
 
 ![CyBorg](top.svg)
 
+## DISCLAIMER
+This board is very much in the alpa stages and subject to design changes. This is my first SBC design and I'm learning as I go. As such this board is certainly not intended for production purposes.
+
 ## Synopsis
 Being a huge fan of the retro-computing scene, and having built a few different "modern retro" computers from kits that were Z80 and Z180-based, I decided to study their schematics and try to design one myself. The design I settled on is a kind of amalgamation of the [Z80-MBC2](https://github.com/SuperFabius/Z80-MBC2) and my [CyrUX Board](https://github.com/cyrusbuilt/CyrUX) and a variation of the [RC2014 Enhanced Bus](https://smallcomputercentral.com/documentation/specification-rc2014-bus/#enhanced). CyBorg represents my first attempt at a CP/M and [Fuzix](https://github.com/EtchedPixels/FUZIX)-compatible retro computer that you can mount in a standard PC chassis.
 
