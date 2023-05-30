@@ -108,3 +108,11 @@ All design files are in the "schematics" folder. It contains the JSON exports fo
 ## Possible Revision Changes
 1) Add fan headers
 2) Switch to ATX24 power connector (far more common)
+3) New board layout
+4) Change name of chipset
+
+## Credits
+- CyBorg's core is derived from the works of "Just4Fun" a.k.a "SuperFabius" ([https://github.com/SuperFabius](https://github.com/SuperFabius)) (parts of the hardware design and IOS firmware code).
+- Southbridge firmware implements the FabGL library and is essentially a modified version of the AnsiTerminal example by Fabrizio Di Vittorio ([http://www.fabglib.org/index.html](http://www.fabglib.org/index.html))
+- Northbridge firmware implements the PetitFS library by ChaN ([http://elm-chan.org/fsw/ff/00index_p.html](http://elm-chan.org/fsw/ff/00index_p.html))
+- Southbridge firmware implements the ButtonEvent library by Renato Ferriera ([https://github.com/renatoferreirarenatoferreira/ebl-arduino/tree/master/ButtonEvent](https://github.com/renatoferreirarenatoferreira/ebl-arduino/tree/master/ButtonEvent))
