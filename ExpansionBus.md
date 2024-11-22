@@ -2,8 +2,9 @@
 
 CyBorg uses a custom Expansion Bus used for add-on cards called "BP-80 Enhanced" (aka. "BP-80E"). This bus specification is essentially a variation of the [Official RC2014 Enhanced Bus Specification](https://smallcomputercentral.com/documentation/specification-rc2014-bus/#enhanced) with the following changes:
 
-1) Row 2 Pins 1 - 16 are used by the 16 GPIOS provided by the MCP23017 I/O expander chip located next to the first bus connector (these pins were orginally unused).
+1) Row 2 Pins 41 - 56 are used by the 16 GPIOS provided by the MCP23017 I/O expander chip located next to the first bus connector (these pins were orginally unused).
 2) Row 1 and Row 2 pins 37 - 40 were originally specified for USER functions (which could be anything), which I've assigned to extra grounds, power pins with additional voltages (+3.3V and +12V) and interrupt cascade.
+3) Row 2 Pins 60 & 61 are used for Card Presence and Card Enable (respectively).
 
 With the exception of the above pin assignment changes, all other pin definitions remain the same and as such, *should be* compatible with official [RC2014](https://rc2014.co.uk/) add-on cards and cards designated as being "Designed for RC2014" with the caveat of any card that specifically uses any of the above pins for other purposes would, of course, not be compatible and could therefore potentially cause damage to both this board and any board you plug into intended for use in RC2014-compatible systems. **USE WITH CAUTION**.
 
@@ -39,9 +40,9 @@ The following table describes the pin definitions:
 | 1 (R)| 21    | CLK    | CPU Clock                         |
 | 1 (R)| 22    | /INT   | Maskable Interrupt                |
 | 1 (R)| 23    | /MREQ  | Memory Request                    |
-| 1 (R)| 24    | /WR    | Write data                        |
-| 1 (R)| 25    | /RD    | Read data                         |
-| 1 (R)| 26    | /IORQ  | I/O Request                       |
+| 1 (R)| 24    | /WR    | Write data****                    |
+| 1 (R)| 25    | /RD    | Read data****                     |
+| 1 (R)| 26    | /IORQ  | I/O Request****                   |
 | 1 (R)| 27    | D0     | Data bit 0                        |
 | 1 (R)| 28    | D1     | Data bit 1                        |
 | 1 (R)| 29    | D2     | Data bit 2                        |
@@ -75,8 +76,8 @@ The following table describes the pin definitions:
 | 2 (L)| 57    | GND    | Ground                            |
 | 2 (L)| 58    | +5V    | +5V DC                            |
 | 2 (L)| 59    | /RFSH  | Refresh                           |
-| 2 (L)| 60    | NC     | Not connected/unused              |
-| 2 (L)| 61    | NC     | Not connected/unused              |
+| 2 (L)| 60    | CPRES  | Card Presence indicator*          |
+| 2 (L)| 61    | CEN    | Card Enable*                      |
 | 2 (L)| 62    | /BUSACK| Bus acknowledge                   |
 | 2 (L)| 63    | /HALT  | Halt/pause execution              |
 | 2 (L)| 64    | /BUSREQ| Bus request                       |
@@ -101,7 +102,10 @@ The following table describes the pin definitions:
 
 \** - Denotes data bus signal is present on expansion bus *ONLY* and does not connect to the CPU's data bus.
 
-\*** - Denotes serial signals present on the expansion bus *ONLY* and does not connect to any UART present on the Northbridge or Southbridge.
+\*** - Denotes serial signals present on the expansion bus *ONLY* and does not connect to any UART present on  ViCREM or KAMVA.
+
+\**** - Denotes signal is unique to the slot, meaning: it's individually controlled by the associated
+mux chip for each signal and assigned to the specific slot.
 
 \/ - Signal prefix denotes a signal that is active low.
 
