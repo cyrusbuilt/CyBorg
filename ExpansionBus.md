@@ -110,6 +110,3 @@ mux chip for each signal and assigned to the specific slot.
 \/ - Signal prefix denotes a signal that is active low.
 
 See the [Z80 CPU User Manual](https://www.zilog.com/docs/z80/um0080.pdf) for documentation on the Z80-specific signals above.
-
-# Notes
-While CyBorg only has 3 expansion bus slots, it is possible to expand that by using a riser card plugged into one of the expansion connectors that provides more slots. This might be tricky to implement if you are using this board in an actual ATX chassis, but I will probably attempt to design a bus expansion board at some point in the future. I personally have used [Stephen Cousin's SC113 Modular Backplane](https://smallcomputercentral.com/sc113-modular-backplane-rc2014/) for this purpose in the interim. Again, you should not try this unless you know what you are doing! In hindsight, I should have probably just used another bus connector, but I wanted to be able to re-use some of my existing add-on cards designed for RC2014 with this system. I may change this in the future though.
