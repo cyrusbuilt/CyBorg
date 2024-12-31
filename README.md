@@ -117,6 +117,12 @@ You'll need an ATX power supply (you can even use a Pico PSU). The next thing yo
 1) Add fan headers
 2) Change expansion bus slots to different connector type.
 
+## Sponsorship/Special Thanks
+A big special thanks to [PCBWay](https://www.pcbway.com) for their sponsorship on this project! It can't be stated enough the quality of their boards and their service. I've been using PCBWay to produce my boards for years now and I've always been really impressed. Fast shipping, fast service, reasonable cost, and the quality has always been stellar. Their pre-production team has even caught mistakes I didn't notice before sending my designs in. The ordering process is simple: just upload a zip file of your gerbers (their site even renders a preview of what the board will look like!) and then you can tweak parameters if needed (including color) and quantity, pick your shipping method, and that's it! They've even produced a series of videos about the whole process you can view [here](https://www.pcbway.com/pcb-service.html?step=1#miao1).
+
+Just look at this beauty! (I'm a huge fan of their black PCBs)
+![CyBorg_Board](board.jpg)
+
 ## Credits
 - CyBorg's core is derived from the works of "Just4Fun" a.k.a "SuperFabius" ([https://github.com/SuperFabius](https://github.com/SuperFabius)) (parts of the hardware design and IOS firmware code).
 - Southbridge firmware implements the FabGL library and is essentially a modified version of the AnsiTerminal example by Fabrizio Di Vittorio ([http://www.fabglib.org/index.html](http://www.fabglib.org/index.html))
